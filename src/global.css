@@ -1,0 +1,76 @@
+#root, #root > div, #root > div > div {
+    height: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.middle-content-main-div {
+    margin: 52px 68px 52px 68px;
+}
+
+/* LOADING */
+
+.loading .h2 {
+    height: 25px;
+    width: 50%;
+    background-color: #e9ebee;
+    border-radius: 8px;
+    margin: 0 0 15px 0;
+}
+
+.icon.animate {
+    height: 30px;
+    width: 30px;
+    background-color: #e9ebee;
+    border-radius: 8px;
+    margin: 6px;
+}
+
+.loading .span {
+    height: 14px;
+    width: 80%;
+    background-color: #e9ebee;
+    border-radius: 8px;
+}
+
+.loading {
+    background-color: #e9ebee;
+    border-radius: 8px;
+}
+.animate {
+    position: relative;
+    overflow: hidden;
+    color: #e9ebee !important;
+}
+
+.animate::after {
+    content: "";
+    display: block;
+    background-color: #dddfe2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(0);
+    animation: 1.5s loading-placeholder ease-in-out infinite;
+}
+
+@keyframes loading-placeholder {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+

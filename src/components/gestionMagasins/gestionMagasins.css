@@ -1,0 +1,71 @@
+#gestion-magasins-div .magasins {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 56px 0 156px 0;
+}
+#gestion-magasins-div .magasins .magasin h2 {
+    margin: 0 0 5px 0;
+    font-family: "Roboto";
+    font-size: 25px;
+}
+
+#gestion-magasins-div .magasins .magasin {
+    width: 330px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.16);
+    padding: 16px 22px 16px 22px;
+    margin: 0 20px 38px 0;
+}
+
+#gestion-magasins-div .magasins .magasin .top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+#gestion-magasins-div .magasins .magasin .top .location {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#gestion-magasins-div .magasins .magasin .top .location span {
+    font-family: "Roboto";
+    font-size: 14px;
+    color: #909090;
+}
+
+#gestion-magasins-div .magasins .magasin .top .buttons {
+    display: flex;
+}
+
+#gestion-magasins-div .magasins .magasin .top .buttons img {
+    cursor: pointer;
+}
+
+#gestion-magasins-div .magasins .magasin .bot {
+    display: flex;
+}
+
+#gestion-magasins-div .magasins .magasin .bot > div {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #D1D1D1;
+    padding-right: 16px;
+    margin-right: 16px;
+}
+
+#gestion-magasins-div .magasins .magasin .bot > div .title {
+    font-family: "Roboto";
+    font-size: 14px;
+    color: #909090;
+    margin-bottom: 10px;
+}
+
+#gestion-magasins-div .magasins .magasin .bot > div .number {
+    font-family: "Roboto";
+    font-size: 20px;
+    color: black;
+}

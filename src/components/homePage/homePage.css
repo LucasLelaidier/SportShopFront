@@ -1,0 +1,103 @@
+/* MAGASINS */
+
+#main-home-div .magasins {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 40px 0 50px 0;
+}
+
+#main-home-div .magasins .magasin {
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.16);
+    background: white;
+    padding: 16px 18px 16px 18px;
+    margin: 0 44px 0 0;
+    width: 210px;
+}
+
+#main-home-div .magasins .magasin h2 {
+    margin: 0 0 15px 0;
+    font-family: "Roboto";
+    font-size: 25px;
+}
+
+#main-home-div .magasins .magasin span {
+    font-family: "Roboto";
+    font-size: 14px;
+    display: block;
+}
+
+#main-home-div .magasins .magasin .link {
+    color: #1200FB;
+    float: right;
+    margin-top: 24px;
+    cursor: pointer;
+}
+
+/* STOCKS */
+
+#main-home-div .stocks {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 56px 0 156px 0;
+}
+
+#main-home-div .stocks .stock {
+    width: 367px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.16);
+    padding: 16px 22px 16px 22px;
+    margin: 0 20px 38px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+#main-home-div .stocks .stock h2 {
+    margin: 0 0 9px 0;
+    font-family: "Roboto";
+    font-size: 18px;
+}
+
+#main-home-div .stocks .no-result {
+    margin: 0 0 9px 0;
+    font-family: "Roboto";
+    font-size: 14px;
+}
+
+#main-home-div .stocks .stock .link {
+    font-family: "Roboto";
+    font-size: 12px;
+    color: #D1D1D1;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#main-home-div .stocks .stock .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+#main-home-div .stocks .stock .right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#main-home-div .stocks .stock .right .label {
+    font-family: "Roboto";
+    font-size: 12px;
+    color: #D1D1D1;
+    font-weight: bold;
+}
+
+#main-home-div .stocks .stock .right .number {
+    font-family: "Roboto";
+    font-size: 18px;
+    color: black;
+    font-weight: bold;
+}
