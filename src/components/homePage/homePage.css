@@ -3,7 +3,7 @@
 #main-home-div .magasins {
     width: 100%;
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin: 40px 0 50px 0;
 }
 
