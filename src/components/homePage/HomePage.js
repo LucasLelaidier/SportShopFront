@@ -40,20 +40,20 @@ class HomePage extends Component {
     displayShops() {
         if(this.state.magasins && this.state.magasins.length) {
             return this.state.magasins.map((magasin) => (
-                <div class="magasin">
+                <div className="magasin" key={ magasin.MAG_ID }>
                     <h2> { magasin.MAG_VILLE } </h2>
                     <span> { magasin.MAG_ADRESSE } </span>
-                    <span onClick={ () => this.changeShop(magasin) } class="link"> voir les stocks </span>
+                    <span onClick={ () => this.changeShop(magasin) } className="link"> voir les stocks </span>
                 </div>
             ))
         } else {
             var placeholders = [];
             for (var i = 0; i < 4; i++) {
                 placeholders.push(
-                    <div class="magasin loading">
-                        <div class="h2 animate"></div>
-                        <div class="span animate"></div>
-                        <span class="link loading animate"> voir les stocks </span>
+                    <div className="magasin loading" key={ i }>
+                        <div className="h2 animate"></div>
+                        <div className="span animate"></div>
+                        <span className="link loading animate"> voir les stocks </span>
                     </div>
                 );
             }
@@ -63,18 +63,18 @@ class HomePage extends Component {
 
     displayArticles() {
         if(this.state.articles && !this.state.articles.length) { // Si la liste est vide (pas de résultat)
-            return <h2 class="no-result"> Aucun résultat </h2>;
+            return <h2 className="no-result"> Aucun résultat </h2>;
         } else {
             if(this.state.articles && this.state.articles[0] !== 'vide') { // Si la requete n'est pas terminée
                 return this.state.articles.map((article) => (
-                    <div class="stock">
-                        <div class="left">
+                    <div className="stock" key={ article.ART_ID }>
+                        <div className="left">
                             <h2> { article.ART_NOM } </h2>
-                            <span class="link"> Modifier les stocks </span>
+                            <span className="link"> Modifier les stocks </span>
                         </div>
-                        <div class="right">
-                            <span class="label"> Stock </span>
-                            <span class="number"> { article.APP_STOCK } </span>
+                        <div className="right">
+                            <span className="label"> Stock </span>
+                            <span className="number"> { article.APP_STOCK } </span>
                         </div>
                     </div>
                 ))
@@ -82,14 +82,14 @@ class HomePage extends Component {
                 var placeholders = [];
                 for (var i = 0; i < 4; i++) {
                     placeholders.push(
-                        <div class="stock loading">
-                            <div class="left">
-                                <div class="h2 animate"></div>
-                                <span class="link loading animate"> Modifier les stocks </span>
+                        <div className="stock loading" key={ i }>
+                            <div className="left">
+                                <div className="h2 animate"></div>
+                                <span className="link loading animate"> Modifier les stocks </span>
                             </div>
-                            <div class="right">
-                                <span class="label loading animate"> Stock </span>
-                                <span class="number loading animate"> 12 </span>
+                            <div className="right">
+                                <span className="label loading animate"> Stock </span>
+                                <span className="number loading animate"> 12 </span>
                             </div>
                         </div>
                     );
@@ -100,16 +100,16 @@ class HomePage extends Component {
     }
 
     render () {
-        return <div id="main-home-div" class="middle-content-main-div">
+        return <div id="main-home-div" className="middle-content-main-div">
             <h1> Magasins </h1>
 
-            <div class="magasins">
+            <div className="magasins">
                 { this.displayShops() }
             </div>
 
             <h1> Stocks : { this.state.selectedMagasin === undefined ? "Chargement..." : this.state.selectedMagasin.MAG_VILLE } </h1>
 
-            <div class="stocks">
+            <div className="stocks">
                 { this.displayArticles() }
             </div>
         </div>

@@ -1,11 +1,14 @@
 import React, { Component } from 'react'
 import './gestionMagasins.css'
 
+import Modal from '../modal/Modal'
+
 class GestionMagasins extends Component {
     constructor(props) {
         super(props);
         this.state = { 
             magasins: [],
+            showModal: false,
         }
     }
 
@@ -20,25 +23,25 @@ class GestionMagasins extends Component {
     displayShops() {
         if(this.state.magasins && this.state.magasins.length) {
             return this.state.magasins.map((magasin) => (
-                <div class="magasin">
-                    <div class="top">
-                        <div class="location">
+                <div className="magasin" key={ magasin.MAG_ID }>
+                    <div className="top">
+                        <div className="location">
                             <h2> { magasin.MAG_VILLE } </h2>
                             <span> { magasin.MAG_ADRESSE } </span>
                         </div>
-                        <div class="buttons">
-                            <img class="button-icon" alt="edit" src="/icons/edit.svg" />
-                            <img class="button-icon" alt="delete" src="/icons/trash-2.svg" />
+                        <div className="buttons">
+                            <img onClick={ this.showModal } className="button-icon" alt="edit" src="/icons/edit.svg" />
+                            <img className="button-icon" alt="delete" src="/icons/trash-2.svg" />
                         </div>
                     </div>
-                    <div class="bot">
+                    <div className="bot">
                         <div>
-                            <span class="title"> Gestionnaires </span>
-                            <span class="number"> 12 </span>
+                            <span className="title"> Gestionnaires </span>
+                            <span className="number"> 12 </span>
                         </div>
                         <div>
-                            <span class="title"> Stocks </span>
-                            <span class="number"> 702 </span>
+                            <span className="title"> Stocks </span>
+                            <span className="number"> 702 </span>
                         </div>
                     </div>
                 </div>
@@ -47,25 +50,25 @@ class GestionMagasins extends Component {
             var placeholders = [];
             for (var i = 0; i < 4; i++) {
                 placeholders.push(
-                    <div class="magasin loading">
-                        <div class="top">
-                            <div class="location">
-                                <div class="h2 animate"></div>
-                                <span class="loading animate"> 7 avenue des champs élysées </span>
+                    <div className="magasin loading" key={ i }>
+                        <div className="top">
+                            <div className="location">
+                                <div className="h2 animate"></div>
+                                <span className="loading animate"> 7 avenue des champs élysées </span>
                             </div>
-                            <div class="buttons">
-                                <div class="button-icon icon animate"> </div>
-                                <div class="button-icon icon animate"></div>
+                            <div className="buttons">
+                                <div className="button-icon icon animate"> </div>
+                                <div className="button-icon icon animate"></div>
                             </div>
                         </div>
-                        <div class="bot">
+                        <div className="bot">
                             <div>
-                                <span class="title loading animate"> Gestionnaires </span>
-                                <span class="number loading animate"> 12 </span>
+                                <span className="title loading animate"> Gestionnaires </span>
+                                <span className="number loading animate"> 12 </span>
                             </div>
                             <div>
-                                <span class="title loading animate"> Stocks </span>
-                                <span class="number loading animate"> 702 </span>
+                                <span className="title loading animate"> Stocks </span>
+                                <span className="number loading animate"> 702 </span>
                             </div>
                         </div>
                     </div>
@@ -75,13 +78,25 @@ class GestionMagasins extends Component {
         }
     }
 
+    showModal = () => {
+        this.setState({ showModal: true });
+    };
+    
+    hideModal = () => {
+        this.setState({ showModal: false });
+    };
+
     render() {
-        return <div id="gestion-magasins-div" class="middle-content-main-div">
+        return <div id="gestion-magasins-div" className="middle-content-main-div">
             <h1> Gestion des magasins </h1>
 
-            <div class="magasins">
+            <div className="magasins">
                 { this.displayShops() }
             </div>
+
+            <Modal title="Petit message" show={ this.state.showModal } handleClose={ this.hideModal }>
+                <h1> YOOOO LES BOYZ </h1>
+            </Modal>
         </div>
     }
 }

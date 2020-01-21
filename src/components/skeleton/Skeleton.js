@@ -20,35 +20,35 @@ class Skeleton extends Component {
         return <div id="main-div">
             <div id="left-div">
                 <div id="logo-div">
-                    <img class="logo" alt="SportShop" src="/images/logo.png"/>
+                    <img className="logo" alt="SportShop" src="/images/logo.png"/>
                 </div>
                 <div id="menu-div">
                     <ul id="menu">
-                        <Link class="link" onClick={ () => this.changeSelected(1) } to="/"> 
-                            <li class={ this.state.selected === 1 ? "selected" : "" }> 
-                                <img class="menu-icon" alt="Home" src={ this.state.selected === 1 ? "/icons/home-selected.svg" : "/icons/home.svg" }/> 
+                        <Link className="link" onClick={ () => this.changeSelected(1) } to="/"> 
+                            <li className={ this.state.selected === 1 ? "selected" : "" }> 
+                                <img className="menu-icon" alt="Home" src={ this.state.selected === 1 ? "/icons/home-selected.svg" : "/icons/home.svg" }/> 
                                 acceuil 
                             </li> 
                         </Link>
 
-                        <Link class="link" onClick={ () => this.changeSelected(2) } to="/magasins"> 
-                            <li class={ this.state.selected === 2 ? "selected" : "" }> 
-                                <img class="menu-icon" alt="Shopping bag" src={ this.state.selected === 2 ? "/icons/shopping-bag-selected.svg" : "/icons/shopping-bag.svg" }/> 
+                        <Link className="link" onClick={ () => this.changeSelected(2) } to="/magasins"> 
+                            <li className={ this.state.selected === 2 ? "selected" : "" }> 
+                                <img className="menu-icon" alt="Shopping bag" src={ this.state.selected === 2 ? "/icons/shopping-bag-selected.svg" : "/icons/shopping-bag.svg" }/> 
                                 magasins 
                             </li> 
                         </Link>
 
-                        <li> <img class="menu-icon" alt="Grid" src="/icons/grid.svg"/> produits </li>
-                        <li> <img class="menu-icon" alt="User" src="/icons/user.svg"/> utilisateurs </li>
+                        <li> <img className="menu-icon" alt="Grid" src="/icons/grid.svg"/> produits </li>
+                        <li> <img className="menu-icon" alt="User" src="/icons/user.svg"/> utilisateurs </li>
                     </ul>
                 </div>
             </div>
             <div id="mid-div">
                 <div id="search-div">
-                    <div class="page-title">
+                    <div className="page-title">
                         <h1> Acceuil </h1>
                     </div>
-                    <input class="search-bar" placeholder="Rechercher un produit..." type="text"/>
+                    <input className="search-bar" placeholder="Rechercher un produit..." type="text"/>
                 </div>
                 <div id="content-div">
                     {this.props.children}
@@ -56,26 +56,26 @@ class Skeleton extends Component {
             </div>
             <div id="right-div">
                 <div id="user-div">
-                    <img class="user-picture" alt="Profil" src="/images/profil.jpg"/>
-                    <div class="infos">
-                        <span class="name"> Lucas Lelaidier </span>
-                        <span class="role"> Admin </span>
+                    <img className="user-picture" alt="Profil" src="/images/profil.jpg"/>
+                    <div className="infos">
+                        <span className="name"> Lucas Lelaidier </span>
+                        <span className="role"> Admin </span>
                     </div>
                 </div>
                 <div id="operations-div">
                     <h1> Dernières opérations </h1>
 
-                    <div class="operation">
-                        <span class="titre green"> Restockage </span>
-                        <span class="valeur"> +15 ballons de foot à Tours </span>
+                    <div className="operation">
+                        <span className="titre green"> Restockage </span>
+                        <span className="valeur"> +15 ballons de foot à Tours </span>
                     </div>
-                    <div class="operation">
-                        <span class="titre green"> Restockage </span>
-                        <span class="valeur"> +15 ballons de foot à Tours </span>
+                    <div className="operation">
+                        <span className="titre green"> Restockage </span>
+                        <span className="valeur"> +15 ballons de foot à Tours </span>
                     </div>
-                    <div class="operation">
-                        <span class="titre green"> Restockage </span>
-                        <span class="valeur"> +15 ballons de foot à Tours </span>
+                    <div className="operation">
+                        <span className="titre green"> Restockage </span>
+                        <span className="valeur"> +15 ballons de foot à Tours </span>
                     </div>
                 </div>
 
