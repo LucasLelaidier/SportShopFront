@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import './gestionMagasins.css'
 
-import Modal from '../modal/Modal'
+import ModalMagasin from '../modal/ModalMagasin'
 
 class GestionMagasins extends Component {
     constructor(props) {
@@ -94,9 +94,7 @@ class GestionMagasins extends Component {
                 { this.displayShops() }
             </div>
 
-            <Modal title="Petit message" show={ this.state.showModal } handleClose={ this.hideModal }>
-                <h1> YOOOO LES BOYZ </h1>
-            </Modal>
+            <ModalMagasin show={ this.state.showModal } handleClose={ this.hideModal }/>
         </div>
     }
 }
