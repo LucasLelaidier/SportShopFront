@@ -38,7 +38,13 @@ class Skeleton extends Component {
                             </li> 
                         </Link>
 
-                        <li> <img className="menu-icon" alt="Grid" src="/icons/grid.svg"/> produits </li>
+                        <Link className="link" onClick={ () => this.changeSelected(3) } to="/articles"> 
+                            <li className={ this.state.selected === 3 ? "selected" : "" }> 
+                                <img className="menu-icon" alt="Grid" src={ this.state.selected === 3 ? "/icons/grid-selected.svg" : "/icons/grid.svg" }/> 
+                                produits 
+                            </li> 
+                        </Link>
+
                         <li> <img className="menu-icon" alt="User" src="/icons/user.svg"/> utilisateurs </li>
                     </ul>
                 </div>

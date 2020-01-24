@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import './gestionMagasins.css'
+import './gestionArticles.css'
 
-import ModalMagasin from '../modal/ModalMagasin'
+import ModalArticle from '../modal/ModalArticle'
 
 class GestionMagasins extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            magasins: [],
+            articles: [],
             showModal: [],
         }
         this.showModal.bind(this);
@@ -15,10 +15,10 @@ class GestionMagasins extends Component {
     }
 
     componentDidMount() {
-        fetch('http://localhost:8000/magasin')
+        fetch('http://localhost:8000/article')
             .then(res => res.json())
             .then((data) => {
-                this.setState({ magasins: data })
+                this.setState({ articles: data })
                 this.initModalState();
             });
     }
@@ -26,23 +26,23 @@ class GestionMagasins extends Component {
     initModalState() {
         let showModal = [];
         showModal[0] = false;
-        this.state.magasins.forEach(magasin => {
-            showModal[magasin.MAG_ID] = false;
+        this.state.articles.forEach(article => {
+            showModal[article.ART_ID] = false;
         });
+
         this.setState({ showModal: showModal });
     }
 
     displayShops() {
-        if(this.state.magasins && this.state.magasins.length && this.state.showModal && this.state.showModal.length) {
-            return this.state.magasins.map((magasin) => {
-                return <div className="magasin" key={ magasin.MAG_ID }>
+        if(this.state.articles && this.state.articles.length && this.state.showModal && this.state.showModal.length) {
+            return this.state.articles.map((article) => {
+                return <div className="magasin" key={ article.ART_ID }>
                     <div className="top">
                         <div className="location">
-                            <h2> { magasin.MAG_VILLE } </h2>
-                            <span> { magasin.MAG_ADRESSE } </span>
+                            <h2 className="smaller"> { article.ART_NOM } </h2>
                         </div>
                         <div className="buttons">
-                            <img onClick={ () => { this.showModal(magasin.MAG_ID) } } className="button-icon" alt="edit" src="/icons/edit.svg" />
+                            <img onClick={ () => { this.showModal(article.ART_ID) } } className="button-icon" alt="edit" src="/icons/edit.svg" />
                             <img className="button-icon" alt="delete" src="/icons/trash-2.svg" />
                         </div>
                     </div>
@@ -56,7 +56,7 @@ class GestionMagasins extends Component {
                             <span className="number"> 702 </span>
                         </div>
                     </div>
-                    <ModalMagasin show={ this.state.showModal[magasin.MAG_ID] } handleClose={ () => { this.hideModal(magasin.MAG_ID) }} ville={ magasin.MAG_VILLE } adresse={ magasin.MAG_ADRESSE } chef={ magasin.CDM_ID }/>
+                    <ModalArticle show={ this.state.showModal[article.ART_ID] } handleClose={ () => { this.hideModal(article.ART_ID) }} id={ article.ART_ID } nom={ article.ART_NOM }/>
                 </div>
             }, this);
         } else {
@@ -67,7 +67,6 @@ class GestionMagasins extends Component {
                         <div className="top">
                             <div className="location">
                                 <div className="h2 animate"></div>
-                                <span className="loading animate"> 7 avenue des champs élysées </span>
                             </div>
                             <div className="buttons">
                                 <div className="button-icon icon animate"> </div>
@@ -112,10 +111,11 @@ class GestionMagasins extends Component {
     render() {
         return <div id="gestion-magasins-div" className="middle-content-main-div">
             <div className="h1-add">
-                <h1> Gestion des magasins </h1>
-                <span onClick={ () => { this.showModal(0) } } className="add-button"> + nouveau magasin </span>
-                <ModalMagasin show={ this.state.showModal[0] } handleClose={ () => { this.hideModal(0) }}/>
+                <h1> Gestion des articles </h1>
+                <span onClick={ () => { this.showModal(0) } } className="add-button"> + nouvel article </span>
+                <ModalArticle show={ this.state.showModal[0] } handleClose={ () => { this.hideModal(0) }}/>
             </div>
+
             <div className="magasins">
                 { this.displayShops() }
             </div>

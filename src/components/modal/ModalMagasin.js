@@ -16,9 +16,10 @@ class ModalMagasin extends Component {
 
         this.changeVille = this.changeVille.bind(this);
         this.changeAdresse = this.changeAdresse.bind(this);
+        this.changeChef = this.changeChef.bind(this);
     }
 
-    addMagasin(ville, adresse) {
+    addMagasin() {
         if(this.props.chef) {
             
         } else {
@@ -34,8 +35,8 @@ class ModalMagasin extends Component {
                     cdmId: this.state.chef
                 }),
             })
-            this.props.handleClose();
         }
+        this.props.handleClose();
     }
 
     componentDidMount() {
@@ -83,12 +84,12 @@ class ModalMagasin extends Component {
 
                 <label className="input">
                     Chef de magasin
-                    <select value={this.state.chef} onChange={this.changeChef}>
+                    <select value={this.state.chef} onChange={ this.changeChef }>
                         { this.getChefs() }
                     </select>
                 </label>
 
-                <span className="submit" onClick={ () => { this.addMagasin() } }> Valider </span>
+                <span className="submit-modal" onClick={ () => { this.addMagasin() } }> Valider </span>
             </section>
         </div>
     }
