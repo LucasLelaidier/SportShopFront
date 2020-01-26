@@ -3,7 +3,7 @@ import './gestionArticles.css'
 
 import ModalArticle from '../modal/ModalArticle'
 
-class GestionMagasins extends Component {
+class GestionArticles extends Component {
     constructor(props) {
         super(props);
         this.state = { 
@@ -130,4 +130,4 @@ class GestionMagasins extends Component {
     }
 }
 
-export default GestionMagasins;
+export default GestionArticles;

@@ -22,20 +22,20 @@ class HomePage extends Component {
     componentDidMount() {
         fetch('http://localhost:8000/magasin')
             .then(res => res.json())
-            .then((data) => {
-                this.setState({ magasins: data })
-                this.setState({ selectedMagasin: data[0] })
+            .then((magasins) => {
+                this.setState({ magasins: magasins })
+                this.setState({ selectedMagasin: magasins[0] })
 
                 fetch(`http://localhost:8000/rayon/magasin/${this.state.selectedMagasin.MAG_ID}`)
                     .then(res => res.json())
-                    .then((data) => {
-                        this.setState({ rayons: data })
+                    .then((rayons) => {
+                        this.setState({ rayons: rayons })
                     });
 
                 fetch(`http://localhost:8000/article/magasin/${this.state.selectedMagasin.MAG_ID}`)
                     .then(res => res.json())
-                    .then((data) => {
-                        this.setState({ articles: data })
+                    .then((articles) => {
+                        this.setState({ articles: articles })
                     });
             });
     }
