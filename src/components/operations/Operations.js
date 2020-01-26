@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './operations.css'
 
 class Operations extends Component {
     constructor(props) {
