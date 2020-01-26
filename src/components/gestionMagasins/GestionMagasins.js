@@ -48,12 +48,12 @@ class GestionMagasins extends Component {
                     </div>
                     <div className="bot">
                         <div>
-                            <span className="title"> Gestionnaires </span>
-                            <span className="number"> 12 </span>
+                            <span className="title"> Rayons </span>
+                            <span className="number"> { magasin.rayons } </span>
                         </div>
                         <div>
-                            <span className="title"> Stocks </span>
-                            <span className="number"> 702 </span>
+                            <span className="title"> Articles </span>
+                            <span className="number"> { magasin.articles } </span>
                         </div>
                     </div>
                     <ModalMagasin show={ this.state.showModal[magasin.MAG_ID] } handleClose={ () => { this.hideModal(magasin.MAG_ID) }} ville={ magasin.MAG_VILLE } adresse={ magasin.MAG_ADRESSE } chef={ magasin.CDM_ID }/>

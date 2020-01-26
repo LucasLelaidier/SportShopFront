@@ -35,6 +35,48 @@
     cursor: pointer;
 }
 
+/* RAYONS */
+
+#main-home-div .rayons {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin: 40px 0 50px 0;
+}
+
+#main-home-div .rayons .no-result {
+    margin: 0 0 9px 0;
+    font-family: "Roboto";
+    font-size: 14px;
+}
+
+
+#main-home-div .rayons .rayon {
+    width: 180px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.16);
+    padding: 16px 22px 16px 22px;
+    margin: 0 20px 38px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-home-div .rayons .rayon h2 {
+    margin: 0;
+    font-family: "Roboto";
+    font-size: 18px;
+}
+
+#main-home-div .rayons .rayon span {
+    margin: 0;
+    font-family: "Roboto";
+    font-size: 14px;
+    color: #1200FB;
+    cursor: pointer;
+}
+
 /* STOCKS */
 
 #main-home-div .stocks {
@@ -53,6 +95,23 @@
     margin: 0 20px 38px 0;
     display: flex;
     justify-content: space-between;
+}
+
+#main-home-div .h1-add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#main-home-div .h1-add .add-button {
+    font-family: "Roboto";
+    font-size: 14px;
+    color: white;
+    background-color: #1200FB;
+    border-radius: 8px;
+    height: auto;
+    cursor: pointer;
+    padding: 11px;
 }
 
 #main-home-div .stocks .stock h2 {

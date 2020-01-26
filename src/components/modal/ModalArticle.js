@@ -17,7 +17,7 @@ class ModalArticle extends Component {
 
     addArticle() {
         if(this.props.nom) {
-            
+            this.props.handleClose();
         } else {
             fetch('http://localhost:8000/article', {
                 method: 'POST',
@@ -28,9 +28,10 @@ class ModalArticle extends Component {
                 body: JSON.stringify({
                     nom: this.state.nom,
                 }),
-            })
+            }).then(() => {
+                this.props.handleClose();
+            });
         }
-        this.props.handleClose();
     }
 
     changeNom(event) {

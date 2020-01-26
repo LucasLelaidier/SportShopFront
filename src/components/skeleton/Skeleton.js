@@ -3,12 +3,20 @@ import './skeleton.css'
 
 import { Link } from "react-router-dom";
 
+import Operations from "../operations/Operations";
+
 class Skeleton extends Component {
     constructor(props) {
         super(props);
         this.state = {
             selected: 1,
+            pages : {
+                1: 'Accueil',
+                2: 'Magasins',
+                3: 'Articles',
+            },
         }
+
         this.changeSelected.bind(this);
     }
 
@@ -52,7 +60,7 @@ class Skeleton extends Component {
             <div id="mid-div">
                 <div id="search-div">
                     <div className="page-title">
-                        <h1> Acceuil </h1>
+                        <h1> { this.state.pages[this.state.selected] } </h1>
                     </div>
                     <input className="search-bar" placeholder="Rechercher un produit..." type="text"/>
                 </div>
@@ -71,18 +79,7 @@ class Skeleton extends Component {
                 <div id="operations-div">
                     <h1> Dernières opérations </h1>
 
-                    <div className="operation">
-                        <span className="titre green"> Restockage </span>
-                        <span className="valeur"> +15 ballons de foot à Tours </span>
-                    </div>
-                    <div className="operation">
-                        <span className="titre green"> Restockage </span>
-                        <span className="valeur"> +15 ballons de foot à Tours </span>
-                    </div>
-                    <div className="operation">
-                        <span className="titre green"> Restockage </span>
-                        <span className="valeur"> +15 ballons de foot à Tours </span>
-                    </div>
+                    <Operations/>
                 </div>
 
             </div>

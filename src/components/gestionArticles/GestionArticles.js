@@ -106,6 +106,13 @@ class GestionMagasins extends Component {
         this.setState({
             showModal: showModalCopy 
         });
+
+        fetch('http://localhost:8000/article')
+            .then(res => res.json())
+            .then((data) => {
+                this.setState({ articles: data })
+                this.initModalState();
+            });
     };
 
     render() {
