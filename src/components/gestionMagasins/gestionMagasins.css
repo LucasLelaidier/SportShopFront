@@ -12,7 +12,7 @@
 }
 
 #gestion-magasins-div .h1-add .add-button {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: white;
     background-color: #1200FB;
@@ -24,7 +24,7 @@
 
 #gestion-magasins-div .magasins .magasin h2 {
     margin: 0 0 5px 0;
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 25px;
 }
 
@@ -53,7 +53,7 @@
 }
 
 #gestion-magasins-div .magasins .magasin .top .location span {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #909090;
 }
@@ -79,14 +79,14 @@
 }
 
 #gestion-magasins-div .magasins .magasin .bot > div .title {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #909090;
     margin-bottom: 10px;
 }
 
 #gestion-magasins-div .magasins .magasin .bot > div .number {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 20px;
     color: black;
 }

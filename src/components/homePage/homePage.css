@@ -18,12 +18,12 @@
 
 #main-home-div .magasins .magasin h2 {
     margin: 0 0 15px 0;
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 25px;
 }
 
 #main-home-div .magasins .magasin span {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 14px;
     display: block;
 }
@@ -46,7 +46,7 @@
 
 #main-home-div .rayons .no-result {
     margin: 0 0 9px 0;
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 14px;
 }
 
@@ -65,13 +65,13 @@
 
 #main-home-div .rayons .rayon h2 {
     margin: 0;
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 18px;
 }
 
 #main-home-div .rayons .rayon span {
     margin: 0;
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #1200FB;
     cursor: pointer;
@@ -104,7 +104,7 @@
 }
 
 #main-home-div .h1-add .add-button {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: white;
     background-color: #1200FB;
@@ -116,18 +116,18 @@
 
 #main-home-div .stocks .stock h2 {
     margin: 0 0 9px 0;
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 18px;
 }
 
 #main-home-div .stocks .no-result {
     margin: 0 0 9px 0;
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 14px;
 }
 
 #main-home-div .stocks .stock .link {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 12px;
     color: #D1D1D1;
     text-decoration: underline;
@@ -148,14 +148,14 @@
 }
 
 #main-home-div .stocks .stock .right .label {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 12px;
     color: #D1D1D1;
     font-weight: bold;
 }
 
 #main-home-div .stocks .stock .right .number {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 18px;
     color: black;
     font-weight: bold;

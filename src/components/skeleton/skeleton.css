@@ -1,5 +1,5 @@
 h1 {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: bold;
     margin: 8px 0 8px 0;
@@ -44,7 +44,7 @@ h1 {
 }
 
 #menu {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 20px;
     list-style: none;
     margin-top: 82px;
@@ -92,13 +92,13 @@ h1 {
     width: 100%;
     margin: 0 100px 0 42px;
     border: none;
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #1200FB;
 }
 
 #search-div .search-bar::placeholder {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: #CFCCFE;
 }
@@ -144,12 +144,12 @@ h1 {
 }
 
 #user-div .infos .name {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 18px;
 }
 
 #user-div .infos .role {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 14px;
     font-weight: bold;
     color: #909090;
@@ -169,7 +169,7 @@ h1 {
 }
 
 #operations-div .operation span {
-    font-family: "Roboto";
+    font-family: "Roboto", Arial, Helvetica, sans-serif;
     font-size: 12px;
     margin: 4px;
 }
