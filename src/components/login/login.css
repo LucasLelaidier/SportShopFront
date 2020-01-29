@@ -6,8 +6,8 @@
     width: 50%;
 }
 
-#login-div .left, .right {
-    padding: 195px 140px 195px 140px;
+#login-div .left, #login-div .right {
+    padding: 20vh 140px 20vh 140px;
 }
 
 #login-div .left img {

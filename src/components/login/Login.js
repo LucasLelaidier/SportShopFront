@@ -30,7 +30,7 @@ class Login extends Component {
                     <h1> Connexion </h1>
 
                     <label className="input">
-                        Identifiant
+                        Nom
                         <input type="text" value={ this.state.login }  onChange={ this.changeLogin }/>
                     </label>
 
