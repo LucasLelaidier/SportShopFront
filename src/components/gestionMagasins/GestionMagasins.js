@@ -33,6 +33,8 @@ class GestionMagasins extends Component {
     }
 
     displayShops() {
+        let user = JSON.parse(localStorage.getItem('user-data'));
+
         if(this.state.magasins && this.state.magasins.length && this.state.showModal && this.state.showModal.length) {
             return this.state.magasins.map((magasin) => {
                 return <div className="magasin" key={ magasin.MAG_ID }>
@@ -42,8 +44,14 @@ class GestionMagasins extends Component {
                             <span> { magasin.MAG_ADRESSE } </span>
                         </div>
                         <div className="buttons">
-                            <img onClick={ () => { this.showModal(magasin.MAG_ID) } } className="button-icon" alt="edit" src="/icons/edit.svg" />
-                            <img className="button-icon" alt="delete" src="/icons/trash-2.svg" />
+                            {
+                                (user['magId'] === magasin.MAG_ID)
+                                ? <div>
+                                    <img onClick={ () => { this.showModal(magasin.MAG_ID) } } className="button-icon" alt="edit" src="/icons/edit.svg" />
+                                    <img className="button-icon" alt="delete" src="/icons/trash-2.svg" />
+                                </div>
+                                : <div></div>
+                            }
                         </div>
                     </div>
                     <div className="bot">

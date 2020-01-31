@@ -15,6 +15,7 @@ class Skeleton extends Component {
                 2: 'Magasins',
                 3: 'Articles',
             },
+            user: {},
         }
 
         this.changeSelected.bind(this);
@@ -22,6 +23,18 @@ class Skeleton extends Component {
 
     changeSelected(number) {
         this.setState({ selected: number });
+    }
+
+    componentDidMount() {
+        let user = JSON.parse(localStorage.getItem('user-data'));
+        if(user) {
+            fetch(`http://localhost:8000/chef-de-magasin/${user['id']}`)
+                .then(res => res.json())
+                .then((data) => {
+                    console.log(data);
+                    this.setState({ user: data[0] });
+                });
+        }
     }
 
     render () {
@@ -70,10 +83,10 @@ class Skeleton extends Component {
             </div>
             <div id="right-div">
                 <div id="user-div">
-                    <img className="user-picture" alt="Profil" src="/images/profil.jpg"/>
+                    <img className="user-picture" alt="Profil" src="/images/default-pp.png"/>
                     <div className="infos">
-                        <span className="name"> Lucas Lelaidier </span>
-                        <span className="role"> Admin </span>
+                        <span className="name"> { this.state.user.CDM_PRENOM } { this.state.user.CDM_NOM } </span>
+                        <span className="role"> Chef de magasin </span>
                     </div>
                 </div>
                 <div id="operations-div">

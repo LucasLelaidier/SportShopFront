@@ -148,6 +148,8 @@ class HomePage extends Component {
     }
 
     displayArticles() {
+        let user = JSON.parse(localStorage.getItem('user-data'));
+
         if(this.state.articles && !this.state.articles.length) { // Si la liste est vide (pas de résultat)
             return <h2 className="no-result"> Aucun résultat </h2>;
         } else {
@@ -156,7 +158,11 @@ class HomePage extends Component {
                     <div className="stock" key={ article.ART_ID }>
                         <div className="left">
                             <h2> { article.ART_NOM } </h2>
-                            <span onClick={ () => { this.showModal(article.ART_ID) } } className="link"> Modifier les stocks </span>
+                            {
+                                (user['magId'] === this.state.selectedMagasin.MAG_ID)
+                                ? <span onClick={ () => { this.showModal(article.ART_ID) } } className="link"> Modifier les stocks </span>
+                                : <div></div>
+                            }
                         </div>
                         <div className="right">
                             <span className="label"> Stock </span>

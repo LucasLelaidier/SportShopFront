@@ -160,6 +160,7 @@ h1 {
 }
 
 #operations-div .operation {
+    background-color: white;
     margin: 24px 20px 24px 20px;
     border-radius: 8px;
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.10);
@@ -176,4 +177,9 @@ h1 {
 
 #operations-div .operation .green {
     color: #28A745;
+}
+
+#operations-div .operation.loading .span.animate {
+    margin: 5px;
+    width: 90%;
 }

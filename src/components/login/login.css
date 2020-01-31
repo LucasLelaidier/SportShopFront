@@ -1,8 +1,9 @@
 #login-div {
     display: flex;
+    background-color: white;
 }
 
-#login-div .left, .right {
+#login-div .left, #login-div .right {
     width: 50%;
 }
 

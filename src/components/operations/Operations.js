@@ -23,7 +23,7 @@ class Operations extends Component {
     getOperations() {
         if(this.state.operations && this.state.operations.length) {
             return this.state.operations.map((operation) => (
-                <div className="operation">
+                <div className="operation" key={ operation.OPE_ID }>
                     <span className="titre green"> { operation.TYP_TYPE } </span>
                     <span className="valeur"> {operation.OPE_VALEUR } { operation.ART_NOM} dans { operation.RAY_NOM} </span>
                 </div>
