@@ -10,7 +10,8 @@ class Login extends Component {
         this.state = {
             login: "",
             password: "",
-            redner: "loading",
+            render: "loading",
+            wrongPassword: false,
         }
 
         this.changeLogin = this.changeLogin.bind(this);
@@ -22,11 +23,11 @@ class Login extends Component {
     }
 
     changeLogin(event) {
-        this.setState({ login: event.target.value });
+        this.setState({ login: event.target.value, wrongPassword: false });
     }
 
     changePassword(event) {
-        this.setState({ password: event.target.value });
+        this.setState({ password: event.target.value, wrongPassword: false });
     }
 
     login() {
@@ -45,13 +46,14 @@ class Login extends Component {
                 if(res.status !== 400) {
                     return res.json();
                 }
+                this.setState({ wrongPassword: true });
                 return null;
             })
             .then((data) => {
                 if(data !== null) {
                     localStorage.setItem('token', data['token']);
                     localStorage.setItem('user-data', JSON.stringify(jwtDecode(data['token'])));
-                    this.setState({ render: "redirect" }); 
+                    window.location.reload();
                 }
             });
     }
@@ -88,12 +90,12 @@ class Login extends Component {
         
                             <h1> Connexion </h1>
         
-                            <label className="input">
+                            <label className={"input " + (this.state.wrongPassword ? 'red' : '')}>
                                 Nom
                                 <input type="text" value={ this.state.login }  onChange={ this.changeLogin }/>
                             </label>
         
-                            <label className="input">
+                            <label className={"input " + (this.state.wrongPassword ? 'red' : '')}>
                                 Mot de passe
                                 <input type="password" value={ this.state.password }  onChange={ this.changePassword }/>
                             </label>

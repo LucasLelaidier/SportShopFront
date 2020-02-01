@@ -14,6 +14,7 @@ class HomePage extends Component {
             selectedMagasin: [],
             showModal: [],
         };
+
         this.changeShop.bind(this);
         this.showModal.bind(this);
         this.hideModal.bind(this);
@@ -209,7 +210,7 @@ class HomePage extends Component {
             <div className="h1-add">
                 <h1> Stocks : { this.state.selectedMagasin.MAG_VILLE } - { this.state.selectedRayon } </h1>
                 <span onClick={ () => { this.showModal(0) } } className="add-button"> + ajouter un article </span>
-                <ModalStock show={ this.state.showModal[0] } handleClose={ () => { this.hideModal(0) }} magasin={ 1 } />
+                <ModalStock show={ this.state.showModal[0] } handleClose={ () => { this.hideModal(0) }} magasin={ 2 } />
             </div>
 
             <div className="stocks">

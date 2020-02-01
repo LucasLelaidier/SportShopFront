@@ -19,6 +19,7 @@ class Skeleton extends Component {
         }
 
         this.changeSelected.bind(this);
+
     }
 
     changeSelected(number) {
@@ -26,6 +27,10 @@ class Skeleton extends Component {
     }
 
     componentDidMount() {
+        this.getUser();
+    }
+
+    getUser() {
         let user = JSON.parse(localStorage.getItem('user-data'));
         if(user) {
             fetch(`http://localhost:8000/chef-de-magasin/${user['id']}`)

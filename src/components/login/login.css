@@ -80,3 +80,11 @@ label.input {
 #login-div label.input input, select {
     border: 1px solid #A0A0A0;
 }
+
+#login-div label.input.red {
+    color: #ED4337;
+}
+
+#login-div label.input.red input {
+    border: solid 1px #ED4337;
+}

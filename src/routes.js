@@ -8,24 +8,31 @@ import GestionMagasins from './components/gestionMagasins/GestionMagasins'
 import GestionArticles from './components/gestionArticles/GestionArticles'
 
 export default function MainRouter () {
+    let user = JSON.parse(localStorage.getItem('user-data'));
     return (
         <Router>
             <Route exact path="/login">
                 <Login/>
             </Route>
-            <Skeleton>
-                <div>
-                    <Route exact path="/">
-                        <HomePage/>
-                    </Route>
-                    <Route exact path="/magasins">
-                        <GestionMagasins/>
-                    </Route>
-                    <Route exact path="/articles">
-                        <GestionArticles/>
-                    </Route>
-                </div>
-            </Skeleton>
+            { 
+                user === null
+                ? <Route exact path="/">
+                    <Login/>
+                </Route>
+                : <Skeleton>
+                    <div>
+                        <Route exact path="/">
+                            <HomePage/>
+                        </Route>
+                        <Route exact path="/magasins">
+                            <GestionMagasins/>
+                        </Route>
+                        <Route exact path="/articles">
+                            <GestionArticles/>
+                        </Route>
+                    </div>
+                </Skeleton>
+            }
         </Router>
     )
 }
